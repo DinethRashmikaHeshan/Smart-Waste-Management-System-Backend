@@ -4,9 +4,7 @@
   "description": "Y3S1-CSSE",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js",   // Use node instead of nodemon for production
-    "build": "webpack --config webpack.config.js" // If you use Webpack; remove this if not needed
+    "start": "node server.js"   // Use node instead of nodemon for production/ If you use Webpack; remove this if not needed
   },
   "author": "",
   "license": "ISC",
