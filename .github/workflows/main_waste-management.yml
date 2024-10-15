@@ -21,10 +21,12 @@ jobs:
         with:
           node-version: '20.x'
 
-      - name: npm install, build, and test
-        run: |
-          npm install
-          npm start
+      - name: Install dependencies
+        run: npm install
+
+      # Remove npm start, since it should not run the server during CI
+      - name: Build the project (if required)
+        run: npm run build || echo "No build step defined"
 
       - name: Zip artifact for deployment
         run: zip release.zip ./* -r
