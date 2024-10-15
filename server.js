@@ -26,6 +26,9 @@ mongoose
 
 // Use Routes
 app.use(express.json());
+app.get('/test', (req, res) => {
+  res.send('App is running successfully');
+});
 app.use('/api/collector', require('./routes/collectorRoutes'));
 app.use('/api/bin', require('./routes/binRoutes'));
 app.use('/api/pickup', require('./routes/pickupRoutes'));
