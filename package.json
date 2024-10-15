@@ -4,7 +4,7 @@
   "description": "Y3S1-CSSE",
   "main": "index.js",
   "scripts": {
-    "start": "node server.js"   // Use node instead of nodemon for production/ If you use Webpack; remove this if not needed
+    "start": "node server.js"  
   },
   "author": "",
   "license": "ISC",
