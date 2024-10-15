@@ -25,6 +25,10 @@ mongoose
   .catch(err => console.log(err));
 
 // Use Routes
+app.use(express.json());
+app.use('/api/collector', require('./routes/collectorRoutes'));
+app.use('/api/bin', require('./routes/binRoutes'));
+app.use('/api/pickup', require('./routes/pickupRoutes'));
 
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
