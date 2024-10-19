@@ -5,7 +5,7 @@ const Collector = require('../models/Collector');
 exports.getDashboard = async (req, res) => {
   const { collectorId } = req.params;
   try {
-    const collections = await Collection.find({ collectorId });
+    const collections = await Collector.find({ collectorId });
 
     const totalWeight = collections.reduce((acc, collection) => acc + collection.weight, 0);
     const totalBins = collections.length;
