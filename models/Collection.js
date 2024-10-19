@@ -1,21 +1,28 @@
-// models/Collection.js
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 
-const collectionSchema = new mongoose.Schema({
-  collectorId: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Collector',
-    required: true,
+const CollectionSchema = new mongoose.Schema(
+  {
+    userId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "User", // Assuming you have a User model
+      required: true,
+    },
+    deviceId: {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Device", // Mapping to Device model
+      required: true,
+    },
+    location: {
+      lat: { type: Number, required: true },
+      lng: { type: Number, required: true },
+    },
+    wasteType: { type: String, required: true },
+    details: { type: String, required: true },
+    date: { type: Date, required: true },
+    time: { type: String, required: true },
+    isCollected: { type: Boolean, default: false },
   },
-  bin_id: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: 'Bin',
-    required: true,
-  },
-  weight: {
-    type: Number,
-    required: true,
-  },
-}, { timestamps: true });
+  { timestamps: true }
+);
 
-module.exports = mongoose.model('Collection', collectionSchema);
+module.exports = mongoose.model("Collection", CollectionSchema);
